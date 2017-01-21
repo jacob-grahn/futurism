@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import firebase from 'firebase'
 import * as currentUser from './services/current-user'
 
