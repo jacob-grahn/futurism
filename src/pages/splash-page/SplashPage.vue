@@ -13,9 +13,18 @@
 </script>
 
 <template>
-  <div>
+  <div class="splash-page">
     <cur-user></cur-user>
     <big-logo></big-logo>
     <main-nav></main-nav>
   </div>
 </template>
+
+<style>
+  .splash-page {
+    width: 100%;
+  }
+  .big-logo {
+    text-align: center;
+  }
+</style>
