@@ -1,6 +1,4 @@
 import firebase from 'firebase'
-import * as currentUser from './services/current-user'
-
 window.firebase = firebase // firebaseui breaks without this...
 
 const config = {
@@ -13,5 +11,5 @@ const config = {
 
 export default () => {
   firebase.initializeApp(config)
-  currentUser.init()
+  return firebase
 }

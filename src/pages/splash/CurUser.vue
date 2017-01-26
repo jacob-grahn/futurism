@@ -10,7 +10,7 @@
 <template>
   <div>
     <div v-if="!$store.getters.isLoggedIn">
-      <router-link to="/login">Sign In</router-link>
+      <router-link to="/sign-in">Sign In</router-link>
     </div>
     <div v-else>{{displayName}}</div>
   </div>

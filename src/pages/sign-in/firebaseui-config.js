@@ -1,5 +1,5 @@
 import firebase from 'firebase'
-import router from '../../services/router'
+import router from '../../router'
 
 export default {
   callbacks: {

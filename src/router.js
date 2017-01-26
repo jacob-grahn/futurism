@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import SplashPage from '../pages/splash-page/SplashPage'
-import LoginPage from '../pages/login-page/LoginPage'
+import SplashPage from './pages/splash/SplashPage'
+import SignInPage from './pages/sign-in/SignInPage'
+import SignOutPage from './pages/sign-out/SignOutPage'
 
 Vue.use(VueRouter)
 
@@ -11,7 +12,8 @@ export default new VueRouter({
   routes: [
     {path: '/', component: SplashPage},
     {path: '/splash', component: SplashPage},
-    {path: '/login', component: LoginPage},
+    {path: '/sign-in', component: SignInPage},
+    {path: '/sign-out', component: SignOutPage},
     {path: '*', redirect: '/'}
   ]
 })

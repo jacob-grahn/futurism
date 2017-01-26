@@ -24,7 +24,7 @@
       },
       stop () {
         if (this.intervalId) {
-          clearInterval(intervalId)
+          clearInterval(this.intervalId)
           delete this.invervalId
         }
       },
