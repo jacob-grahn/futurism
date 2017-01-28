@@ -9,7 +9,7 @@
 
 <template>
   <div class="cur-user">
-    <div v-if="!$store.getters.isLoggedIn">
+    <div v-if="!$store.getters.isSignedIn">
       <router-link to="/sign-in">Sign In</router-link>
     </div>
     <div v-else>{{displayName}}</div>

@@ -12,7 +12,7 @@ export default {
     }
   },
   getters: {
-    isLoggedIn (state) {
+    isSignedIn (state) {
       return !!state.uid
     }
   }

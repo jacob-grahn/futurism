@@ -1,7 +1,7 @@
 <script>
   import BigLogo from './BigLogo'
   import CurUser from './CurUser'
-  import MainNav from './MainNav'
+  import MainNav from './main-nav/MainNav'
 
   export default {
     components: {
