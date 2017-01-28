@@ -12,18 +12,19 @@ describe('SplashPage.vue', () => {
   const vm = new Vue({
     el: document.createElement('div'),
     render: (h) => h(SplashPage),
-    store: new Vuex.Store({})
+    store: new Vuex.Store({}),
+    router: new VueRouter()
   })
   function textContent (selector) {
     return vm.$el.querySelector(selector).textContent
   }
   it('should render a logo', () => {
-    expect(textContent('.big-logo')).toBeTruthy()
+    expect(textContent('.big-logo')).to.exist
   })
   it('should render some nav', () => {
-    expect(textContent('.main-nav')).toBeTruthy()
+    expect(textContent('.main-nav')).to.exist
   })
   it('should show the current user', () => {
-    expect(textContent('.cur-user')).toBeTruthy()
+    expect(textContent('.cur-user')).to.exist
   })
 })
