@@ -1,8 +1,10 @@
 <script>
   export default {
     name: 'cur-user',
-    data () {
-      return this.$store.state.currentUser
+    computed: {
+      displayName: function () {
+        return this.$store.state.currentUser.displayName
+      }
     }
   }
 </script>

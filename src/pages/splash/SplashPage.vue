@@ -1,5 +1,5 @@
 <script>
-  import BigLogo from './BigLogo'
+  import BigLogo from './big-logo/BigLogo'
   import CurUser from './CurUser'
   import MainNav from './main-nav/MainNav'
 

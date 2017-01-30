@@ -1,5 +1,6 @@
 <script>
   import FaderWaver from './FaderWaver'
+
   export default {
     components: {
       FaderWaver
@@ -15,7 +16,7 @@
 </template>
 
 <style lang="less">
-  @import '../../styles/variables';
+  @import '../../../styles/variables';
 
   .big-logo {
   }

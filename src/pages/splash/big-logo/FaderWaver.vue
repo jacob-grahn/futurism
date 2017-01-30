@@ -10,14 +10,20 @@
     },
     data () {
       return {
-        elements: this.text.split('').map(letter => {
-          return {letter, opacity: minOpacity}
-        }),
+        elements: this.splitText(this.text),
         intervalId: null,
-        nextOpacity: 0
+        curOpacity: 0
       }
     },
     methods: {
+      splitText (text) {
+        if (!text) {
+          return []
+        }
+        return text.split('').map(letter => {
+          return {letter, opacity: minOpacity}
+        })
+      },
       start () {
         this.stop()
         this.intervalId = setInterval(this.step, freq);
@@ -25,35 +31,40 @@
       stop () {
         if (this.intervalId) {
           clearInterval(this.intervalId)
-          delete this.invervalId
+          delete this.intervalId
         }
       },
       step () {
-        this.updateNextOpacity()
-        let prevOpacity = this.nextOpacity;
+        const nextOpacity = this.calcNextOpacity(this.curOpacity)
+        this.shiftOpacities(nextOpacity)
+        this.curOpacity = nextOpacity
+      },
+      shiftOpacities (opacity) {
         this.elements.forEach(element => {
           const tmp = element.opacity
-          element.opacity = prevOpacity
-          prevOpacity = tmp
+          element.opacity = opacity
+          opacity = tmp
         })
       },
-      updateNextOpacity () {
-        this.nextOpacity += (Math.random() * changeRate) - (changeRate / 2)
-        this.nextOpacity = Math.max(this.nextOpacity, minOpacity)
-        this.nextOpacity = Math.min(this.nextOpacity, maxOpacity)
+      calcNextOpacity (opacity) {
+        let nextOpacity = opacity
+        nextOpacity += (Math.random() * changeRate) - (changeRate / 2)
+        nextOpacity = Math.max(nextOpacity, minOpacity)
+        nextOpacity = Math.min(nextOpacity, maxOpacity)
+        return nextOpacity
       }
     },
     mounted () {
       this.start()
     },
-    destroyed () {
+    beforeDestroy () {
       this.stop()
     }
   }
 </script>
 
 <template>
-  <ul>
+  <ul class="fader-waver">
     <li v-for="element in elements" :style="`opacity: ${element.opacity}`">
       {{element.letter}}
     </li>
