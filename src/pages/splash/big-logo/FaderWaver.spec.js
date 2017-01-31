@@ -1,4 +1,4 @@
-/* global describe, expect, it */
+/* global describe, expect, it, sinon */
 
 import { createComponent } from '../../../../test/unit/specs/setup'
 import FaderWaver from './FaderWaver'
@@ -19,6 +19,7 @@ describe('FaderWaver.vue', () => {
       vm.$destroy()
     }).to.not.throw()
   })
+
   it('should split and display the text that is passed into it', () => {
     const vm = createComponent(FaderWaver, {
       propsData: {text: 'cat'}
@@ -29,21 +30,24 @@ describe('FaderWaver.vue', () => {
     expect(textContents).to.deep.equal(['c', 'a', 't'])
     vm.$destroy()
   })
+
   it('should change character opacity over time', () => {
     mockRandom(1)
+    const clock = sinon.useFakeTimers()
+
     const vm = createComponent(FaderWaver, {
       propsData: {text: 'avc'}
     })
+    const firstChild = vm.$el.children[0]
 
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        const firstChild = vm.$el.children[0]
-        const opacity = Number(firstChild.style.opacity)
-        expect(opacity).to.be.above(0)
-        vm.$destroy()
-        unmockRandom()
-        resolve()
-      }, 500)
+    expect(Number(firstChild.style.opacity)).to.equal(0)
+    clock.tick(1000)
+
+    return vm.$nextTick(function () {
+      expect(Number(firstChild.style.opacity)).to.be.above(0)
+      clock.restore()
+      unmockRandom()
+      vm.$destory()
     })
   })
 })
