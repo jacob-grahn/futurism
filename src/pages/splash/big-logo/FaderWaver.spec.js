@@ -43,11 +43,12 @@ describe('FaderWaver.vue', () => {
     expect(Number(firstChild.style.opacity)).to.equal(0)
     clock.tick(1000)
 
-    return vm.$nextTick(function () {
+    return vm.$nextTick()
+    .then(() => {
       expect(Number(firstChild.style.opacity)).to.be.above(0)
       clock.restore()
       unmockRandom()
-      vm.$destory()
+      vm.$destroy()
     })
   })
 })
