@@ -1,20 +1,20 @@
 export default {
   state: {
-    firebase: null
+    api: null
   },
   mutations: {
-    SET_FIREBASE (state, { firebase }) {
-      state.firebase = firebase
+    SET_FIREBASE (state, { api }) {
+      state.api = api
     }
   },
   actions: {
     SIGN_OUT ({ state }) {
-      state.firebase.auth().signOut()
+      state.api.auth().signOut()
     },
-    INIT_FIREBASE ({ state, commit }, { firebase }) {
-      commit('SET_FIREBASE', {firebase})
-      state.firebase.auth().onAuthStateChanged(newUser => {
-        commit('SET_CURRENT_USER', newUser || {})
+    INIT_FIREBASE ({ state, commit }, { api }) {
+      commit('SET_FIREBASE', {api})
+      api.auth().onAuthStateChanged(user => {
+        commit('SET_CURRENT_USER', user || {})
       })
     }
   }
