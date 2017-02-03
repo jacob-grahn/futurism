@@ -5,7 +5,7 @@ import store from './store'
 import firebaseInit from './firebase-init'
 
 const firebase = firebaseInit()
-store.dispatch('INIT_FIREBASE', {firebase})
+store.dispatch('INIT_FIREBASE', {api: firebase})
 
 export const app = new Vue({
   ...App,
