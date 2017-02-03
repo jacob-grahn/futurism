@@ -40,6 +40,6 @@ describe('firebase', () => {
     expect(eventFunc).to.be.a('function')
     eventFunc(user)
     expect(commit.args[1][0]).to.equal('SET_CURRENT_USER')
-    expect(commit.args[1][0]).to.deep.equal(user)
+    expect(commit.args[1][1]).to.deep.equal(user)
   })
 })
