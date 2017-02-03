@@ -22,7 +22,7 @@ describe('firebase', () => {
     expect(signOut.calledOnce).to.be.true
   })
 
-  // this test and function seem to complex, it should be broken up
+  // this test and function seem too complex; it should be broken up
   it('INIT_FIREBASE should set up firebase', () => {
     const commit = sinon.stub()
     const onAuthStateChanged = sinon.stub()
