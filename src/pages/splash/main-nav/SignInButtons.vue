@@ -1,5 +1,6 @@
 <script>
   import firebaseui from 'firebaseui'
+  import css from 'firebaseui/dist/firebaseui.css'
   let ui
 
   export default {

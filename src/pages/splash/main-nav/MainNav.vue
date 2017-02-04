@@ -22,3 +22,10 @@
     <sign-in-buttons v-else></sign-in-buttons>
   </div>
 </template>
+
+<style>
+  .main-nav {
+    width: 275px;
+    margin: auto;
+  }
+</style>

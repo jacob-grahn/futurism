@@ -1,8 +1,8 @@
 <script>
   const freq = 150;
   const minOpacity = 0;
-  const maxOpacity = 0.8;
-  const changeRate = 0.75;
+  const maxOpacity = 1;
+  const changeRate = 1;
 
   export default {
     props: {
@@ -71,12 +71,9 @@
   </ul>
 </template>
 
-<style lang="less" scoped>
-  ul {
-    font-size: 80px;
-    @include transform(skew(-30deg,0deg));
-  }
+<style scoped>
   ul li {
     display: inline;
+    /* transition: opacity 0.25s; */
   }
 </style>

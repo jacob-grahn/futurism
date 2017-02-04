@@ -21,10 +21,7 @@
 </template>
 
 <style>
-  .splash-page {
-    width: 100%;
-  }
   .big-logo {
-    text-align: center;
+    margin: 32px auto;
   }
 </style>
