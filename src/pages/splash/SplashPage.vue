@@ -1,6 +1,6 @@
 <script>
   import BigLogo from './big-logo/BigLogo'
-  import CurUser from './CurUser'
+  import CurUser from './cur-user/CurUser'
   import MainNav from './main-nav/MainNav'
 
   export default {

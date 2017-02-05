@@ -3,7 +3,8 @@
     name: 'cur-user',
     computed: {
       displayName: function () {
-        return this.$store.state.currentUser.displayName
+        const currentUser = this.$store.state.currentUser
+        return currentUser ? currentUser.displayName : null
       }
     }
   }
