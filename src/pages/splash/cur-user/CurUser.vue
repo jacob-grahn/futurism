@@ -12,6 +12,6 @@
 
 <template>
   <div class="cur-user">
-    {{displayName}}
+    <router-link v-if="displayName" to="/sign-out">{{displayName}}</router-link>
   </div>
 </template>

@@ -5,9 +5,21 @@
 </script>
 
 <template>
-  <ul class="game-buttons">
-    <li><a href="/play">Play</a></li>
-    <li><a href="/challenge">Challenge</a></li>
-    <li><router-link to="/sign-out">Sign Out</router-link></li>
-  </ul>
+  <div class="game-buttons">
+    <router-link
+      to="/challenges"
+      class="mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      Challenges
+    </router-link>
+    <router-link
+      to="/multiplayer"
+      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+      Multiplayer
+    </router-link>
+    <router-link
+      to="/deck-builder"
+      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+      Deck Builder
+    </router-link>
+  </div>
 </template>
