@@ -7,8 +7,10 @@
 <template>
   <div class="game-buttons">
     <router-link
+      v-mdl
+      tag="button"
       to="/challenges"
-      class="mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
       Challenges
     </router-link>
     <router-link
