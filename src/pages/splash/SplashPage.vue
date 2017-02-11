@@ -22,6 +22,6 @@
 
 <style>
   .big-logo {
-    margin: 32px auto;
+    margin: 128px auto 32px auto;
   }
 </style>
