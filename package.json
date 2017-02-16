@@ -1,7 +1,7 @@
 {
   "name": "futurism",
   "version": "1.0.0",
-  "description": "A customizable trading card game with deep strategies and a fast pace",
+  "description": "The customizable trading card game",
   "author": "Jacob Grahn <contact@jacobgrahn.com>",
   "private": true,
   "scripts": {
