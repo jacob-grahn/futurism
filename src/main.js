@@ -1,11 +1,13 @@
+/* global firebase */
+
 import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
-import firebaseInit from './firebase-init'
+import firebaseConfig from './firebase-config'
 import mdl from './directives/mdl'
 
-const firebase = firebaseInit()
+firebase.initializeApp(firebaseConfig)
 store.dispatch('INIT_FIREBASE', {api: firebase})
 
 Vue.directive('mdl', mdl)

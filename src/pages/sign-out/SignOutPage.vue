@@ -1,6 +1,4 @@
 <script>
-  import firebase from 'firebase'
-
   export default {
     mounted () {
       this.$store.dispatch('SIGN_OUT')
