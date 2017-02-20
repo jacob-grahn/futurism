@@ -27,6 +27,13 @@
       class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
       Deck Builder
     </router-link>
+    <router-link
+      tag="button"
+      to="/card-builder"
+      v-mdl
+      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+      Card Builder
+    </router-link>
   </div>
 </template>
 

@@ -1,6 +1,5 @@
 /* global describe, expect, it, sinon, before, after */
 
-import firebaseui from 'firebaseui'
 import { createComponent } from '../../../../test/unit/specs/setup'
 import SignInButtons from './SignInButtons'
 
@@ -8,8 +7,10 @@ describe('SignInButtons.vue', () => {
   let vm
   let start
   let reset
+  let firebaseui = {auth: {AuthUI: () => {}}}
 
   before(() => {
+    window.firebaseui = firebaseui
     start = sinon.stub()
     reset = sinon.stub()
     sinon.stub(firebaseui.auth, 'AuthUI').returns({start, reset})
@@ -50,6 +51,7 @@ describe('SignInButtons.vue', () => {
   })
 
   after(() => {
+    delete window.firebaseui
     firebaseui.auth.AuthUI.restore()
     vm.$destroy()
     expect(reset.calledOnce).to.be.true
