@@ -1,6 +1,9 @@
 <script>
+  import mdl from '../../../directives/mdl'
+
   export default {
-    name: 'game-buttons'
+    name: 'game-buttons',
+    directives: {mdl}
   }
 </script>
 

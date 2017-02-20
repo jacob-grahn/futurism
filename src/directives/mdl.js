@@ -1,7 +1,6 @@
-/* global componentHandler */
-
 export default {
   bind: function (el) {
-    componentHandler.upgradeElement(el)
+    if (!window.componentHandler) return
+    window.componentHandler.upgradeElement(el)
   }
 }
