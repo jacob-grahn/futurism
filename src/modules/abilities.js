@@ -1,8 +1,6 @@
 // this data should probably be in a databse
 // it will always be used, so it's a bit easier to have it here
 
-import { map, prop, add, subtract, pipe, max } from 'ramda'
-
 const attackEffect = (state) => {
   const { target, level } = state
   return {

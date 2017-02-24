@@ -4,8 +4,6 @@
 // prevent cheating
 // also somehow, this needs to run client side if there is no internet
 
-import { lensPath, view, propEq, filter } from 'ramda'
-
 export default {
   state: {
     uidTurn: null,
