@@ -12,6 +12,10 @@
 
 <template>
   <div class="cur-user">
-    <router-link v-if="displayName" to="/sign-out">{{displayName}}</router-link>
+    <button
+      v-if="displayName"
+      @click="$store.dispatch('SIGN_OUT')">
+      {{displayName}}
+    </button>
   </div>
 </template>
