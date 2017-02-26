@@ -35,7 +35,7 @@ export default {
       const card = getMatCard(state, uid, position)
       if (!card) return state
 
-      const abilities = filter(onSwipeIn, card.abilities)
+      const abilities = card.abilities.filter(onSwipeIn)
       if (abilities.length === 0) return state
 
       state = useAbilities(state, abilities)
@@ -63,10 +63,7 @@ function useAbilities (state, abilities) {
 }
 
 function getMatCard (state, uid, position) {
-  return view(
-    lensPath(['users', uid, 'mat', position]),
-    state
-  )
+  return state.users[uid].mat[position]
 }
 
-const onSwipeIn = propEq('activateOn', 'swipe-in')
+const onSwipeIn = (obj) => obj.activateOn === 'swipe-in'

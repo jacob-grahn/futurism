@@ -5,11 +5,7 @@ const attackEffect = (state) => {
   const { target, level } = state
   return {
     ...state,
-    target: pipe(
-      prop('hp'),
-      subtract(level),
-      max(0)
-    )(target)
+    target: Math.max(target.hp - level, 0)
   }
 }
 
@@ -35,13 +31,9 @@ export default {
       canLevel: true,
       activateOn: 'passive',
       effect: (state) => {
-        map(
-          pipe(
-            prop('sheild'),
-            add(level)
-          ),
-          neighbors
-        )
+        state.neighbors.map(neighbor => {
+          neighbor.sheild += state.level
+        })
       }
     },
     'counter-attack': {
@@ -57,16 +49,6 @@ export default {
       canLevel: false,
       activateOn: 'pre-swipe-in',
       effect: ({ deck, self }) => {
-        pipe(
-          prepend(self),
-          takeLast(1),
-          set(
-            lense('position'),
-            view(lense('position'), self)
-          )
-        )(deck)
-        deck = withoutLast(1, deck)
-        self = without('position', self)
       }
     },
     poison: {},
