@@ -9,7 +9,6 @@ describe('mdl.js', () => {
   beforeEach(() => {
     window.componentHandler = {
       upgradeElement: (el) => {
-        console.log('upgradeElement', el)
         el.innerHTML = 'Upgraded'
       }
     }
